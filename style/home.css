@@ -5,6 +5,7 @@
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
+    font-family: monospace;
 }
 :root{
     --background: rgb(24,24,24);
@@ -169,8 +170,10 @@ section{
     border-radius: 1em;
 }
 .about-info p{
+    margin: 20px;
     color: white;
-    opacity: 0.8;
+    opacity: 1;
+    font-size: 18px;
 }
 .skills{
     display: flex;
