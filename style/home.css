@@ -420,3 +420,30 @@ footer{
         align-items: baseline;
     }
 }
+
+@keyframes waveText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.wavetext {
+    display: inline-block;
+    animation: waveText 2.5s ease-in-out infinite;
+}
+
+
+.typing::after {
+    content: "|"; /* Cursor */
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
