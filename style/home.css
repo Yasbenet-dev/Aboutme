@@ -20,6 +20,7 @@ body{
     overflow-y: hidden; /* Desactiva scroll vertical */
     scroll-snap-type: x mandatory; /* Scroll suave entre secciones */
 }
+
 nav{
     position: fixed;
     top: 0;
@@ -259,18 +260,7 @@ form input{
 form input:focus{
     background: rgb(229,229,229);
 }
-
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10em;
-    bottom: 0;
-    background-color: var(--background);
-    width: 100%;
-    padding: 5em 15%;
-}
-.col-left{
+    .col-left{
     display: flex;
     flex-direction: column;
     gap: 1em;
