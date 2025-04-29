@@ -14,11 +14,11 @@
 body{
     min-height: 100vh;
     background-color: var(--background);
-    display: flex; /* Organiza las secciones horizontalmente */
-    flex-wrap: nowrap; /* Evita que las secciones se envuelvan */
-    overflow-x: hidden; /* Habilita scroll horizontal */
-    overflow-y: hidden; /* Desactiva scroll vertical */
-    scroll-snap-type: x mandatory; /* Scroll suave entre secciones */
+    display: flex; 
+    flex-wrap: nowrap; 
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    scroll-snap-type: x mandatory; 
 }
 
 nav{
@@ -84,9 +84,9 @@ span{
 section{
     min-height: 100vh;
     padding: 5% 15%;
-    min-width: 100vw; /* Cada sección ocupa el ancho de la pantalla */
-    height: 100vh; /* Cada sección ocupa el alto de la pantalla */
-    scroll-snap-align: start; /* Alinea la sección al inicio del viewport */
+    min-width: 100vw;
+    height: 100vh; 
+    scroll-snap-align: start; 
 }
 #home{
     display: flex;
@@ -108,8 +108,7 @@ section{
     margin-top: 3rem;
     box-shadow: 0 0 30px #FFD700 ;
     background: linear-gradient(135deg, #FFD700, #f8b73fce, #ffffff);
-    /* background: linear-gradient(to right,#D1D1D1, #004D61) ;
-    */cursor: pointer;
+    cursor: pointer;
     transition: 0.4 ease-in-out;
 }
 #home img:hover{
