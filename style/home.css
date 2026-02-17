@@ -16,9 +16,10 @@ body{
     background-color: var(--background);
     display: flex; 
     flex-wrap: nowrap; 
-    overflow-x: hidden; 
-    overflow-y: hidden; 
+    overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
 }
 
 nav{
