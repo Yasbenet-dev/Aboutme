@@ -19,7 +19,6 @@ body{
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory; 
-    scroll-behavior: smooth;
 }
 
 nav{
@@ -300,6 +299,23 @@ form input:focus{
 .social-icons i:hover{
     color: white;
 }
+
+#scroll-progress{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(to right, #ffeb37, #ffb429f1);
+    transition: width 120ms linear;
+}
+nav { position: fixed; }
+nav ul a.active { opacity: 1; }
+
+
+
+
+
 @media(max-width: 968px){
     *{
         text-align: center;
