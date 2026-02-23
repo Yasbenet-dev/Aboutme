@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
-    
-    <nav id="scroll-progress">
+    <!-- Navegacion-->
+    <nav>
         <a href="#" class="logo"><span>Jose Ulloa</span></a>
         <ul class="links"> 
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
             <!-- <a href="#contact">Contact</a> -->
         </ul>    
 
         <!-- <a href="#contact" class="btn">Contact Me</a> -->
     </nav>
+
+    <!-- Barra de progreso horizontal del scroll -->
+    <div id="scroll-progress"></div>
 
     <section id="home">
         <img src="img/josesmile2.png" alt="">
@@ -25,7 +29,17 @@
         <div id="box-home">
             <div class="info-box">
                 <h1 id="typing-text"></h1>
-                <h3>Web Developer</h3>
+                <h3>Junior Backend Developer</h3>
+              <div class="social-buttons">
+                    <a href="#" target="_blank" class="social-btn">
+                        LinkedIn
+                    </a>
+                    <a href="#" target="_blank" class="social-btn">
+                        GitHub
+                    </a>
+                    <a href="#" target="_blank" class="social-btn">
+                        Onboard
+                    </a>
             </div>
 
             <!-- <div class="btn-box">
@@ -35,60 +49,218 @@
         </div>
     </section>
 
+
+    <!-- ABOUT -->
     <section id="about">
+        <div class="about-box">
 
-    <div class="about-box">
+    
+     <div class="about-info">
+  <!-- <h2><span class="wavetext">About Me</span></h2> -->
 
-        <div class="about-info">
-                <h2><span class="wavetext">About Me</span></h2>
-                <p>
-                    ¡Hola! Soy estudiante de Ingeniería en Informática con una gran pasión por el desarrollo web.
-                    Me encanta aprender y mejorar constantemente mis habilidades. Aunque estoy comenzando,  
-                    tengo muchas ganas de trabajar en proyectos desafiantes y seguir creciendo en este mundo tecnológico.  
-                    ¡Estoy abierto a nuevas oportunidades y colaboraciones!
-                </p>
-        </div>
-            <br>
-            <h2><span class="wavetext">Skills</span></h2>
-
-            <div class="skills">
-                <a href="https://github.com/Yasbenet-dev"><img src="img/github.png" alt=""></a>
-                <img src="img/jslogo.png" alt="">
-                <img src="img/csslogo.png" alt="">
-                <img src="img/git.png" alt="">
-            </div>
-            <div class="skills">
-                <img src="img/Sql_data_base_with_logo.svg.png" alt="">
-            </div>
-            
+  <div class="code-window">
+    <div class="code-window__bar">
+      <div class="code-window__controls">
+        <span class="btn-dot min"></span>
+        <span class="btn-dot max"></span>
+        <span class="btn-dot close"></span>
+      </div>
+      <span class="code-window__title">aboutMe.json</span>
     </div>
-        <div id="about-img"><img src="img/PAYASOJOSE.png" alt=""></div>
+
+    <pre class="code-block"><code id="aboutCode"></code></pre>
+  </div>
+</div>
+
+            <br>
+
+            <h2><span class="wavetext">Skills</span></h2>
+            
+            <div class="skills">
+                <!-- 
+                <a href="https://github.com/" target="_blank">
+                    <img src="img/github.png" alt="GitHub">
+                </a>
+                 -->
+                <img src="img/jslogo.png" alt="JavaScript">
+                <img src="img/git.png" alt="Git">
+                <img src="img/mongodb_logo.png" alt="Mongo">
+                <img src="img/sql-e1633736325758.png" alt="SQL">
+            </div>
+
+            
+        </div>
+
+        
+        <div id="about-img">
+            <img src="img/PAYASOJOSE.png" alt="Jose">
+        </div>
     </section>
 
     <section id="services">
-        <h2 class="header"><span class="wavetext">Services</span></h2>
-        <div class="services-container">
-            <div class="box">
-                <h2><span>Web Designer</span></h2>
-                <p>Diseño interfaces atractivas y funcionales enfocadas en la experiencia del usuario. 
-                    Utilizo principios de diseño responsivo y herramientas 
-                    modernas para lograr resultados visuales coherentes y accesibles.</p>
-                <img src="img/PAYASOJOSE.png" alt="">
-            </div>
-            <div class="box">
-                <h2><span>Web Developer</span></h2>
-                <p>Desarrollo sitios web dinámicos con tecnologías como 
-                    HTML, CSS, JavaScript y frameworks modernos. 
-                    Me enfoco en el rendimiento, escalabilidad y buenas prácticas de desarrollo.</p>
-                <img src="img/PAYASOJOSE.png" alt="">
-            </div>
-            <div class="box">
-                <h2><span>administrative help</span></h2>
-                <p>Apoyo en tareas administrativas digitales como gestión de contenidos,
-                    organización de datos y atención al cliente en plataformas online, asegurando 
-                    eficiencia y precisión.</p>
-                <img src="img/PAYASOJOSE.png" alt="">
-            </div>         
+  <h2 class="header"><span class="wavetext">Core Capabilities</span></h2>
+
+  <div class="services-container">
+
+    <!-- 1) Backend + APIs -->
+    <div class="box">
+      <h2><span>Backend & APIs</span></h2>
+      <p>
+        Diseño e implemento lógica de negocio y APIs REST para aplicaciones web.
+        Integro autenticación, validación de datos y conexión con bases de datos,
+        priorizando estructura y mantenibilidad.
+      </p>
+
+      <div class="service-tags">
+        <span>Node.js</span>
+        <span>REST</span>
+        <span>Auth</span>
+        <span>CRUD</span>
+      </div>
+
+      <div class="service-proof">
+        <small>Relacionado: Capstone (plataforma modular) · Proyectos Fullstack</small>
+      </div>
+
+    </div>
+
+    <!-- 2) Data Modeling + Databases -->
+    <div class="box">
+      <h2><span>Data Modeling & Databases</span></h2>
+      <p>
+        Modelo datos para sistemas reales: estructura relacional/NoSQL, diseño de entidades
+        y relaciones, consultas SQL y organización para reporting.
+        Enfoque en consistencia, trazabilidad y crecimiento del sistema.
+      </p>
+
+      <div class="service-tags">
+        <span>SQL</span>
+        <span>MongoDB</span>
+        <span>Data Modeling</span>
+        <span>Queries</span>
+      </div>
+
+      <div class="service-proof">
+        <small>Relacionado: AsisControl / Horarios / proyectos con BD</small>
+      </div>
+
+      
+    </div>
+
+    <!-- 3) Frontend UI (como complemento) -->
+    <div class="box">
+      <h2><span>Frontend UI (Complemento)</span></h2>
+      <p>
+        Construyo interfaces limpias y responsivas enfocadas en experiencia de uso,
+        conectadas a datos reales. Ideal para dashboards, paneles y productos web modernos
+        con despliegue en Vercel.
+      </p>
+
+      <div class="service-tags">
+        <span>HTML/CSS</span>
+        <span>JavaScript</span>
+        <span>UI</span>
+        <span>Vercel</span>
+      </div>
+
+      <div class="service-proof">
+        <small>Relacionado: ACTWILD · UI/UX y diseño visual</small>
+      </div>
+
+    
+    </div>
+
+  </div>
+</section>
+    
+
+    <!-- seccion de proyectos personales -->
+    <section id="projects">
+        <h2 class="header"><span class="wavetext">Projects</span></h2>
+        <div class="projects-track">
+           <div class="projects-track">
+
+  <!-- CAPSTONE -->
+  <article class="project-card project-card--media">
+    <div class="project-tag">Deployed · Academic</div>
+
+    <a class="project-thumb"
+       href="https://capstone-804-v-mel-equipo03-2025.vercel.app/"
+       target="_blank" rel="noopener">
+      <img src="img/projects/capstone.png" alt="Capstone Plataforma Modular">
+    </a>
+
+    <h3>Plataforma Modular de Gestión</h3>
+    <p>
+      Plataforma web desarrollada como proyecto capstone para la gestión
+      estructurada de procesos internos. Enfoque en modularidad y escalabilidad.
+    </p>
+
+    <div class="project-meta">Fullstack · React · Backend · Deploy Vercel</div>
+
+    <div class="project-actions">
+      <a href="https://capstone-804-v-mel-equipo03-2025.vercel.app/"
+         target="_blank"
+         class="project-link">
+        Ver Demo →
+      </a>
+    </div>
+  </article>
+
+
+  <!-- ACTWILD -->
+  <article class="project-card project-card--media">
+    <div class="project-tag">Deployed · Web App</div>
+
+    <a class="project-thumb"
+       href="https://actwild.vercel.app/"
+       target="_blank" rel="noopener">
+      <img src="img/projects/actwild.png" alt="ActWild Plataforma">
+    </a>
+
+    <h3>ActWild</h3>
+    <p>
+      Aplicación web enfocada en experiencia visual dinámica y diseño moderno.
+      Desarrollo orientado a interfaz limpia y navegación intuitiva.
+    </p>
+
+    <div class="project-meta">Frontend · UI · Deploy Vercel</div>
+
+    <div class="project-actions">
+      <a href="https://actwild.vercel.app/"
+         target="_blank"
+         class="project-link">
+        Ver Demo →
+      </a>
+    </div>
+  </article>
+            <!-- PYTHON -->
+  <article class="project-card project-card--media">
+    <div class="project-tag">Deployed · Web App</div>
+
+    <a class="project-thumb"
+       href="https://actwild.vercel.app/"
+       target="_blank" rel="noopener">
+      <img src="img/projects/actwild.png" alt="ActWild Plataforma">
+    </a>
+
+    <h3>DRAW PYTHON</h3>
+    <p>
+      Aplicación web enfocada en experiencia visual dinámica y diseño moderno.
+      Desarrollo orientado a interfaz limpia y navegación intuitiva.
+    </p>
+
+    <div class="project-meta">Frontend · UI · Deploy Vercel</div>
+
+    <div class="project-actions">
+      <a href="https://actwild.vercel.app/"
+         target="_blank"
+         class="project-link">
+        Ver Demo →
+      </a>
+    </div>
+  </article>
+</div>
         </div>
     </section>
 
@@ -114,13 +286,24 @@
         </form>
     </section>
     -->
-<script src="functionality/functions.js"></script>
+    <script src="functionality/functions.js"></script>
     <script>
-    const scrollContainer = document.body;
+    // Scroll vertical → horizontal solo en desktop
+    const getScrollRoot = () => document.scrollingElement || document.documentElement || document.body;
 
     window.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        scrollContainer.scrollLeft += e.deltaY;
+        if (window.innerWidth <= 968) return; // en mobile dejamos el scroll normal
+
+        const scrollRoot = getScrollRoot();
+        const maxScrollLeft = scrollRoot.scrollWidth - scrollRoot.clientWidth;
+        if (maxScrollLeft <= 0) return;
+
+        // Usamos el movimiento vertical para desplazar en horizontal
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            const next = Math.max(0, Math.min(maxScrollLeft, scrollRoot.scrollLeft + e.deltaY));
+            scrollRoot.scrollTo({ left: next });
+        }
     }, { passive: false });
     </script>
 </body>
