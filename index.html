@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/home.css">
 </head>
 <body>
-    <!-- Navegacion-->
+    <!--Nav-->
     <nav>
         <a href="#" class="logo"><span>Jose Ulloa</span></a>
         <ul class="links"> 
@@ -16,11 +16,10 @@
             <a href="#projects">Projects</a>
             <!-- <a href="#contact">Contact</a> -->
         </ul>    
-
         <!-- <a href="#contact" class="btn">Contact Me</a> -->
     </nav>
 
-    <!-- Barra de progreso horizontal del scroll -->
+    <!-- Barra horizontal -->
     <div id="scroll-progress"></div>
 
     <section id="home">
@@ -54,10 +53,13 @@
     <section id="about">
         <div class="about-box">
 
-    
-     <div class="about-info">
-  <!-- <h2><span class="wavetext">About Me</span></h2> -->
+     <!-- Trigger about modal -->
+     <button type="button" class="about-trigger" aria-expanded="false" aria-controls="aboutModal" id="aboutTrigger">
+       <span class="about-trigger__icon">{}</span>
+       <span>Ver about</span>
+     </button>
 
+     <div class="about-info about-info--inline">
   <div class="code-window">
     <div class="code-window__bar">
       <div class="code-window__controls">
@@ -102,7 +104,6 @@
 
   <div class="services-container">
 
-    <!-- 1) Backend + APIs -->
     <div class="box">
       <h2><span>Backend & APIs</span></h2>
       <p>
@@ -123,8 +124,6 @@
       </div>
 
     </div>
-
-    <!-- 2) Data Modeling + Databases -->
     <div class="box">
       <h2><span>Data Modeling & Databases</span></h2>
       <p>
@@ -146,8 +145,6 @@
 
       
     </div>
-
-    <!-- 3) Frontend UI (como complemento) -->
     <div class="box">
       <h2><span>Frontend UI (Complemento)</span></h2>
       <p>
@@ -174,7 +171,7 @@
 </section>
     
 
-    <!-- seccion de proyectos personales -->
+    <!-- seccion de proyectos  -->
     <section id="projects">
         <h2 class="header"><span class="wavetext">Projects</span></h2>
         <div class="projects-track">
@@ -286,19 +283,34 @@
         </form>
     </section>
     -->
+
+    <!-- Modal About -->
+    <div id="aboutModal" class="about-modal" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle" aria-hidden="true">
+      <div class="about-modal__backdrop" id="aboutModalBackdrop"></div>
+      <div class="about-modal__content">
+        <div class="code-window about-modal__window">
+          <div class="code-window__bar">
+            <div class="code-window__controls">
+              <span class="btn-dot min"></span>
+              <span class="btn-dot max"></span>
+              <button type="button" class="btn-dot close about-modal__close" aria-label="Cerrar"></button>
+            </div>
+            <span class="code-window__title" id="aboutModalTitle">aboutMe.json</span>
+          </div>
+          <pre class="code-block"><code id="aboutCodeModal"></code></pre>
+        </div>
+      </div>
+    </div>
+
     <script src="functionality/functions.js"></script>
     <script>
-    // Scroll vertical → horizontal solo en desktop
+    // Scroll vertical 
     const getScrollRoot = () => document.scrollingElement || document.documentElement || document.body;
-
     window.addEventListener("wheel", (e) => {
-        if (window.innerWidth <= 968) return; // en mobile dejamos el scroll normal
-
+        if (window.innerWidth <= 968) return; 
         const scrollRoot = getScrollRoot();
         const maxScrollLeft = scrollRoot.scrollWidth - scrollRoot.clientWidth;
         if (maxScrollLeft <= 0) return;
-
-        // Usamos el movimiento vertical para desplazar en horizontal
         if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
             e.preventDefault();
             const next = Math.max(0, Math.min(maxScrollLeft, scrollRoot.scrollLeft + e.deltaY));

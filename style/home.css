@@ -30,7 +30,6 @@
 body{
   min-height: 100vh;
   background-color: var(--background);
-
   /* Desktop: layout horizontal */
   display: flex;
   flex-wrap: nowrap;
@@ -371,6 +370,103 @@ section{
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
+
+/* Cursor para typewriter del código (about + modal) */
+.type-cursor::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  color: var(--gold-1);
+}
+
+/* Trigger "Ver about" (oculto en desktop) */
+.about-trigger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 1em;
+  padding: 1em 1.5em;
+  font-family: inherit;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.95);
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(0,0,0,0.4));
+  border: 1px solid var(--border-2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.about-trigger:hover {
+  border-color: rgba(255,235,55,0.35);
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.5));
+  box-shadow: 0 0 24px rgba(255,215,0,0.15);
+}
+.about-trigger__icon {
+  font-size: 1.2em;
+  opacity: 0.9;
+  background: linear-gradient(to right, var(--gold-1), var(--gold-2));
+  background-clip: text;
+  color: transparent;
+}
+
+/* Modal About */
+.about-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.about-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.about-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.about-modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow: auto;
+}
+.about-modal__window {
+  width: 100%;
+  max-width: 100%;
+}
+.about-modal__window .code-block {
+  max-height: 60vh;
+  overflow: auto;
+}
+.about-modal__window .code-block code {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.about-modal__close {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: #ef4444 !important;
+}
+.about-modal__close:hover {
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
 /* =========================
    SERVICES
 ========================= */
@@ -456,7 +552,7 @@ section{
   align-items: stretch;
   margin-top: 2em;
 
-  /* si necesitas, permite scroll interno sin romper la página */
+  /*scroll interno sin romper la página */
   overflow-x: auto;
   padding-bottom: 12px;
   scroll-snap-type: x proximity;
@@ -613,8 +709,6 @@ form input:focus{ background: rgb(229,229,229); }
 
 /* =========================
    RESPONSIVE (MOBILE)
-   - Cambiamos layout de body a vertical
-   - Projects pasa a grid/columna
 ========================= */
 @media (max-width: 968px){
   *{ text-align: center; }
@@ -632,7 +726,7 @@ form input:focus{ background: rgb(229,229,229); }
     min-height: auto;
     min-width: 100vw;
     height: auto;
-    padding: 90px 8% 60px; /* deja espacio por nav si la vuelves a mostrar */
+    padding: 90px 8% 60px; 
   }
 
   nav{ display: none; }
@@ -649,33 +743,37 @@ form input:focus{ background: rgb(229,229,229); }
   #home h1{ font-size: 1.3em; }
   #home h3{ font-size: 1.8em; }
 
-  /* About */
+  /* About modal */
   #about{
     flex-direction: column;
     gap: 2em;
   }
   #about-img{ display: none; }
+  .about-trigger{
+    display: flex;
+  }
+  .about-info--inline{
+    display: none;
+  }
+  .about-info--inline .code-window{ width: 100%; max-width: 100%; }
   .skills img{
     width: 56px;
     margin: 10px;
   }
-  .code-window{ width: 100%; max-width: 100%; }
 
   /* Services */
   .box img{ display: none; }
   .header{ font-size: 3em; }
 
-  /* ✅ Projects responsivo: grid */
   .projects-track{
-    overflow: visible;       /* no scroll interno en mobile */
-    padding-bottom: 0;
+    overflow: visible;      
     display: grid;
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
   .project-card{
-    min-width: 0;            /* clave para que no fuerce ancho */
+    min-width: 0;            
     max-width: 100%;
     padding: 18px;
   }

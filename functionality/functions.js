@@ -54,14 +54,52 @@ const codeEl = document.getElementById("aboutCode");
 
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
-    if (e.isIntersecting) {
+    if (e.isIntersecting && window.innerWidth > 968) {
       typewriter(codeEl, aboutText, 14);
       io.disconnect();
     }
   });
 }, { threshold: 0.35 });
 
-io.observe(codeEl);
+if (codeEl) io.observe(codeEl);
+
+/* Modal About : abrir/cerrar y typewriter */
+(function () {
+  const trigger = document.getElementById("aboutTrigger");
+  const modal = document.getElementById("aboutModal");
+  const backdrop = document.getElementById("aboutModalBackdrop");
+  const closeBtn = modal?.querySelector(".about-modal__close");
+  const modalCodeEl = document.getElementById("aboutCodeModal");
+
+  function openModal() {
+    if (!modal || !modalCodeEl) return;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    if (trigger) trigger.setAttribute("aria-expanded", "true");
+    modalCodeEl.textContent = "";
+    modalCodeEl.classList.remove("type-cursor");
+    typewriter(modalCodeEl, aboutText, 14);
+    closeBtn?.focus();
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    trigger?.focus();
+  }
+
+  trigger?.addEventListener("click", openModal);
+  backdrop?.addEventListener("click", closeModal);
+  closeBtn?.addEventListener("click", closeModal);
+
+  modal?.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
+})();
 
 (() => {
   const els = document.querySelectorAll("section, .box, .about-box, #about-img, #box-home, .project-card");
