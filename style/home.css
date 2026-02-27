@@ -781,6 +781,11 @@ form input:focus{ background: rgb(229,229,229); }
   .project-thumb img{
     height: 180px;
   }
+
+  #about img{
+    width: 60%;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 768px){
