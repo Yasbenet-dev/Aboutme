@@ -218,6 +218,8 @@ section{
 #home img{
   width: 20vw;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   margin-top: 3rem;
   box-shadow: 0 0 30px #FFD700;
   background: linear-gradient(135deg, #FFD700, #f8b73fce, #ffffff);
@@ -782,10 +784,6 @@ form input:focus{ background: rgb(229,229,229); }
     height: 180px;
   }
 
-  #about img{
-    width: 60%;
-    margin-top: 0;
-  }
 }
 
 @media (max-width: 768px){
